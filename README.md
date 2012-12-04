@@ -19,8 +19,7 @@ the device.
 6. cp -R ez430rf2500.kext /System/Library/Extensions/
 7. Execute `sudo kextload -b com.colossaldynamics.ez430rf2500`
 
-If the extension is not loaded automatically after rebooting, then simply
-execute the last step before using mspdebug.
+If the extension is not loaded automatically after rebooting, then simply execute the last step before using mspdebug.
 ---
 
 The work was inspired by [westf][2] on the [Ti e2e][3] community, he wrote the
