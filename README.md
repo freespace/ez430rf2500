@@ -9,23 +9,18 @@ the device.
 
 # Installation
 
-1. Open the project in Xcode 4.1
-2. Click the run button
-3. Show in Finder the ez430rf2500.kext that was created (under products), and
-   drag it to your desktop.
-4. Open Terminal.app
+1. Open Terminal.app
+2. Navigate to this repository
+3. Type `xcodebuild`
+4. Navigate to `build/Release`
+5. Execute 
+        sudo chown -R root:wheel ez430rf2500.kext
+        sudo chmod -R 755 ez430rf2500.kext
+6. cp -R ez430rf2500.kext /System/Library/Extensions/
+7. Execute `sudo kextload -b com.colossaldynamics.ez430rf2500`
 
-        sudo su
-        cd /System/Library/Extensions
-        cp -R /User/<username>/Desktop/ez430rf2500.kext .
-        chown -R root:wheel ez430rf2500.kext
-        chmod -R 755 ez430rf2500.kext
-
-5. Reboot your system
-
-At this point you should now be able to use mspdebug with the rf2500 driver to
-talk to the Ti Launchpad.
-
+If the extension is not loaded automatically after rebooting, then simply
+execute the last step before using mspdebug.
 ---
 
 The work was inspired by [westf][2] on the [Ti e2e][3] community, he wrote the
